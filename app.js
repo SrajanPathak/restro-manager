@@ -11,7 +11,7 @@ var users = require('./routes/users');
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'restro-ng2', 'dist'));
+app.set('views', path.join(__dirname, 'client'));
 app.set('view engine', 'ejs');
 app.engine('html',require('ejs').renderFile);
 
@@ -21,7 +21,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'restro-ng2', 'dist')));
+app.use(express.static(path.join(__dirname, 'client')));
 
 app.use('/', index);
 app.use('/users', users);
